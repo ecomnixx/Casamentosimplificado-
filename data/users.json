@@ -1,0 +1,13 @@
+[
+  {
+    "id": "admin-master",
+    "name": "Administrador Master",
+    "email": "familiacardoso21@gmail.com",
+    "status": "approved",
+    "role": "admin",
+    "amountPaid": 9.99,
+    "paymentMethod": "pix",
+    "createdAt": "2026-09-19T22:25:09.836Z",
+    "paidAt": "2026-09-19T22:25:09.836Z"
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "name": "Casamento Facilitado",
+  "description": "O assistente definitivo dos noivos com guia completo de fornecedores, barman, DJ, orçamento, checklist inteligente e paletas de cores personalizáveis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
