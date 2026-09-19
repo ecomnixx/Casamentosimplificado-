@@ -202,7 +202,7 @@ export const WeddingSiteTab: React.FC<WeddingSiteTabProps> = ({
         <h2 className="text-[11px] font-bold tracking-[0.1em] uppercase text-stone-400 mb-2 px-0.5">
           PRÓXIMOS PASSOS
         </h2>
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar overscroll-contain-x touch-pan-x">
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar overscroll-contain-x">
           {steps.map((step) => (
             <button
               key={`step-${step.num}`}

@@ -64,8 +64,7 @@ export const SuppliersHomePreview: React.FC<SuppliersHomePreviewProps> = ({
         </div>
         <div
           data-horizontal-scroll="true"
-          className="flex items-center gap-2 overflow-x-auto pb-1.5 no-scrollbar overscroll-contain-x touch-pan-x"
-          style={{ overscrollBehaviorX: 'contain', WebkitOverflowScrolling: 'touch' }}
+          className="flex items-center gap-2 overflow-x-auto pb-1.5 no-scrollbar overscroll-contain-x"
         >
           {QUICK_SUGGESTIONS.map((item) => {
             const alreadyAdded = addedSuppliers.some(

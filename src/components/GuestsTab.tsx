@@ -252,7 +252,7 @@ export const GuestsTab: React.FC<GuestsTabProps> = ({
         </div>
 
         {/* Filter Pills */}
-        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar overscroll-contain-x touch-pan-x">
+        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar overscroll-contain-x">
           {['Todos', 'Pendentes', 'Parcial', 'Confirmados', 'Recusados'].map((status) => (
             <button
               key={status}

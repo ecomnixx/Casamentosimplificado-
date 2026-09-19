@@ -316,62 +316,6 @@ export default function App() {
     setIsHomeAddSupplierOpen(true);
   };
 
-  // Strictly prevent sideways page dragging / elastic bounce while preserving vertical scroll and internal horizontal carousels
-  useEffect(() => {
-    let startX = 0;
-    let startY = 0;
-
-    const onTouchStart = (e: TouchEvent) => {
-      if (e.touches.length === 1) {
-        startX = e.touches[0].clientX;
-        startY = e.touches[0].clientY;
-      }
-    };
-
-    const onTouchMove = (e: TouchEvent) => {
-      if (e.touches.length === 1) {
-        const dx = e.touches[0].clientX - startX;
-        const dy = e.touches[0].clientY - startY;
-        const absDx = Math.abs(dx);
-        const absDy = Math.abs(dy);
-
-        const target = e.target as HTMLElement | null;
-        const scrollableParent = target?.closest(
-          '[data-horizontal-scroll="true"], .overflow-x-auto, .overflow-x-scroll'
-        ) as HTMLElement | null;
-
-        if (!scrollableParent) {
-          // If gesture is horizontal on regular page content, prevent sideways pull
-          if (absDx > absDy && absDx > 6) {
-            if (e.cancelable) {
-              e.preventDefault();
-            }
-          }
-        } else {
-          // If inside horizontal carousel, contain scroll and prevent page elasticity at edges
-          const atLeft = scrollableParent.scrollLeft <= 0;
-          const atRight =
-            scrollableParent.scrollLeft + scrollableParent.clientWidth >=
-            scrollableParent.scrollWidth - 1;
-
-          if ((atLeft && dx > 0) || (atRight && dx < 0)) {
-            if (e.cancelable) {
-              e.preventDefault();
-            }
-          }
-        }
-      }
-    };
-
-    window.addEventListener('touchstart', onTouchStart, { passive: true });
-    window.addEventListener('touchmove', onTouchMove, { passive: false });
-
-    return () => {
-      window.removeEventListener('touchstart', onTouchStart);
-      window.removeEventListener('touchmove', onTouchMove);
-    };
-  }, []);
-
   // Synchronize server users and local storage on startup
   useEffect(() => {
     fetchServerUsers().then((serverList) => {
@@ -520,7 +464,7 @@ export default function App() {
   if (!userAccess.isUnlocked) {
     return (
       <div
-        className="min-h-screen w-full max-w-full overflow-x-hidden flex flex-col justify-center items-center p-3 relative font-sans-ui"
+        className="min-h-screen w-full max-w-full overflow-x-hidden overflow-y-auto flex flex-col justify-start sm:justify-center items-center py-6 px-3 relative font-sans-ui"
         style={{
           background: `linear-gradient(180deg, ${currentPalette.bgFrom} 0%, ${currentPalette.bgTo} 100%)`,
           minHeight: '100vh',
@@ -575,7 +519,7 @@ export default function App() {
 
       {/* Mobile-sized container centered for perfect responsive display */}
       <div className="max-w-md w-full mx-auto min-h-screen relative flex flex-col justify-between overflow-x-hidden">
-        <main className="flex-1 w-full max-w-full overflow-x-hidden">
+        <main className="flex-1 w-full max-w-full overflow-x-hidden pb-28">
           {/* Global Header */}
           <Header
             profile={profile}

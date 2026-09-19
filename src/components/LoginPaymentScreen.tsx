@@ -511,7 +511,7 @@ export const LoginPaymentScreen: React.FC<LoginPaymentScreenProps> = ({
   };
 
   return (
-    <div className="min-h-screen w-full flex flex-col justify-between py-6 px-4 sm:px-6 max-w-md mx-auto">
+    <div className="w-full flex flex-col justify-start py-4 px-3 sm:px-6 max-w-md mx-auto">
       {/* Brand Header */}
       <div className="text-center pt-2">
         <div

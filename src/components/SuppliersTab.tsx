@@ -167,8 +167,7 @@ export const SuppliersTab: React.FC<SuppliersTabProps> = ({
 
           {/* Category Group Filter Pills */}
           <div
-            className="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar overscroll-contain-x touch-pan-x"
-            style={{ overscrollBehaviorX: 'contain', WebkitOverflowScrolling: 'touch' }}
+            className="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar overscroll-contain-x"
           >
             {CATEGORY_GROUPS.map((group) => {
               const isSelected = selectedGroup === group;
@@ -366,8 +365,7 @@ export const SuppliersTab: React.FC<SuppliersTabProps> = ({
           {/* Filter Tabs */}
           {addedSuppliers.length > 0 && (
             <div
-              className="flex items-center gap-1.5 p-1 rounded-2xl bg-white border border-stone-200/80 overflow-x-auto no-scrollbar overscroll-contain-x touch-pan-x"
-              style={{ overscrollBehaviorX: 'contain', WebkitOverflowScrolling: 'touch' }}
+              className="flex items-center gap-1.5 p-1 rounded-2xl bg-white border border-stone-200/80 overflow-x-auto no-scrollbar overscroll-contain-x"
             >
               <button
                 onClick={() => setStatusFilter('all')}
